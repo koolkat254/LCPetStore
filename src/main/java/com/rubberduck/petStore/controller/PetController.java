@@ -27,6 +27,29 @@ public class PetController {
 
     @GetMapping("createForm")
     public String createPetForm() {
-        return "";
+        return "<!DOCTYPE html>\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <title>Title</title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "  <div>\n" +
+                "    <form action=\"create\" method=\"post\">\n" +
+                "      <div>\n" +
+                "        <label>Name: </label>\n" +
+                "        <input type=\"text\" name=\"name\">\n" +
+                "      </div>\n" +
+                "      <div>\n" +
+                "        <label>Species: </label>\n" +
+                "        <input type=\"text\" name=\"species\">\n" +
+                "      </div>\n" +
+                "      <div>\n" +
+                "        <input type=\"submit\" value=\"Create Pet\">\n" +
+                "      </div>\n" +
+                "    </form>\n" +
+                "  </div>\n" +
+                "</body>\n" +
+                "</html>";
     }
 }
