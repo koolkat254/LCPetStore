@@ -16,4 +16,9 @@ public class Pet {
     public String getSpecies() {
         return species;
     }
+
+    @Override
+    public String toString() {
+        return name + " the " + species;
+    }
 }

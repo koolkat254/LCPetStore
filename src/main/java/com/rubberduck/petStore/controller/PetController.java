@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("pet")
 public class PetController {
 
+    House house;
+
     @GetMapping("createHome/{owner}")
     public String createHomeByOwner(@PathVariable String owner){
-        House house = new House(owner);
+        house = new House(owner);
         return "<h1>Created Home for "+owner+"</h1>";
     }
 
@@ -24,8 +26,10 @@ public class PetController {
 
     @PostMapping("create")
     public String createPetRequest(@RequestParam String name, @RequestParam String species) {
-//        Pet myPet = new Pet(name, species);
+        Pet myPet = new Pet(name, species);
 //        return myPet;
+        house.addPet(myPet);
+        System.out.println(house);
 
         return "<h1>My Pet</h1>" +
                 "<h3>" + name + "</h3>" +
