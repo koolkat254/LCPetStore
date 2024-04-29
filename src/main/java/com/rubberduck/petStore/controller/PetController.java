@@ -1,12 +1,19 @@
 package com.rubberduck.petStore.controller;
 
 
+import com.rubberduck.petStore.model.House;
 import com.rubberduck.petStore.model.Pet;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("pet")
 public class PetController {
+
+    @GetMapping("createHome/{owner}")
+    public String createHomeByOwner(@PathVariable String owner){
+        House house = new House(owner);
+        return "<h1>Created Home for "+owner+"</h1>";
+    }
 
     @GetMapping("create/{name}/{species}")
     public String createPetPath(@PathVariable String name, @PathVariable String species) {
